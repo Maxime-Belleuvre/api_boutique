@@ -1,6 +1,4 @@
-@extends('layouts.app')
 
-@section('content')
     <form action="">
             <?php
     require '../vendor/autoload.php';
@@ -31,4 +29,4 @@
     ?>
         <input type="submit" value="submit">
     </form>
-@endsection
+
