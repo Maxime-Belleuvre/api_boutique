@@ -1,7 +1,7 @@
 
     <form action="">
         <?php
-  require 'vendor/autoload.php';
+  require '../vendor/autoload.php';
   use \Mailjet\Resources;
   $mj = new \Mailjet\Client('****************************1234','****************************abcd',true,['version' => 'v3.1']);
   $body = [
