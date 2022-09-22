@@ -1,9 +1,15 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
+<<<<<<< HEAD
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
         'reference' => 'f2de7246109f59a9f0d97615c25dfeb47ef921e9',
+=======
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => NULL,
+>>>>>>> be431276d20273dca897c51dc1f765ce63628479
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -365,9 +371,15 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
+<<<<<<< HEAD
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
             'reference' => 'f2de7246109f59a9f0d97615c25dfeb47ef921e9',
+=======
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => NULL,
+>>>>>>> be431276d20273dca897c51dc1f765ce63628479
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -460,6 +472,24 @@
             'reference' => 'ff6248ea87a9f116e78edd6002e39e5128a0d4dd',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/mime-type-detection',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'mailjet/laravel-mailjet' => array(
+            'pretty_version' => '3.0.3',
+            'version' => '3.0.3.0',
+            'reference' => 'f1c2ab525c2f99e05b3e811bda9561a9115fd302',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mailjet/laravel-mailjet',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'mailjet/mailjet-apiv3-php' => array(
+            'pretty_version' => 'v1.5.7',
+            'version' => '1.5.7.0',
+            'reference' => '414650b079dcec86ada225599e73092177e2d8e5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mailjet/mailjet-apiv3-php',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -1052,6 +1082,15 @@
             'reference' => '55a7cb8f8518d35e2a039daaec6e1ee20509510e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/mailer',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/mailjet-mailer' => array(
+            'pretty_version' => 'v6.1.0',
+            'version' => '6.1.0.0',
+            'reference' => '618d1416ca5fb84f45817aaa674ad5f210a88fc6',
+            'type' => 'symfony-mailer-bridge',
+            'install_path' => __DIR__ . '/../symfony/mailjet-mailer',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
