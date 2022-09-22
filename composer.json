@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.0",
+        "mailjet/laravel-mailjet": "^3.0",
         "mailjet/mailjet-apiv3-php": "^1.5"
     },
     "require-dev": {
