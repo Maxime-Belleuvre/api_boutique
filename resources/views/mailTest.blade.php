@@ -3,7 +3,7 @@
         <?php
         require '../vendor/autoload.php';
         use \Mailjet\Resources;
-        $mj = new \Mailjet\Client('truc','bidule',true,['version' => 'v3.1']);
+        $mj = new \Mailjet\Client('truc ','bidule',true,['version' => 'v3.1']);
         $body = [
           'Messages' => [
             [
