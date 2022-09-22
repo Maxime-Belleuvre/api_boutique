@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
 
+
+
 class ItemController extends Controller
 {
     /**
@@ -26,7 +28,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,9 +37,16 @@ class ItemController extends Controller
      * @param  \App\Http\Requests\StoreItemRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreItemRequest $request)
+    public function store(StoreItemRequest $request)  // Validation du stockage de l'item
+    
     {
-        //
+        $item = Item::create($request->validated()); // Création de l'item
+
+        $request->session()->flash('item.id', $item->id); // Stockage de l'item dans la session
+
+        return redirect()->route('item.index'); // Redirection vers la page d'accueil
+        
+        
     }
 
     /**

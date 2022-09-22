@@ -12,12 +12,20 @@ class CartFactory extends Factory
     /**
      * Define the model's default state.
      *
-     * @return array<string, mixed>
+     * @var string
      */
+    protected $model = \App\Models\Cart::class;
+
+    /**
+     * @return array
+     */
+
+
     public function definition()
     {
         return [
-            //
+            // 
+            
         ];
     }
 }
