@@ -74,9 +74,14 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show(Request $request,Cart $cart)
     {
-        return response()->json($cart->items()->sum('items.price'));
+        $user =  $request->user();
+        
+        return response()->json([
+            'items' => $user->cart->items,
+            'total' =>  $user->cart->items()->sum('items.price'),
+    ]);
     }
 
     /**
