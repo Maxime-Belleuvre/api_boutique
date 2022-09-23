@@ -43,8 +43,8 @@ class itemController extends Controller
     {
         
         $validated = $request->validate([
-            'title' => 'required|unique:posts|max:255',
-            'description' => 'required|unique:posts|max:255',
+            'title' => 'required|unique:item|max:255',
+            'description' => 'required|max:255',
             'price' => 'required',
             'image_url' => 'required|unique|',
         ]);
