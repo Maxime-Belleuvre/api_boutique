@@ -8,6 +8,7 @@ use App\Models\Item;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -18,9 +19,13 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function add_in_my_cart(StoreCartRequest $request, Item $item)
+    public function add_in_my_cart(Request $request, Item $item)
     {
-        $user = User::find(11); // request()->user(); // permet de récupérer l'utilisateur connecté
+<<<<<<< HEAD
+        $user = User::find(11); // request()->user();
+=======
+        $user =  $request->user();
+>>>>>>> branch_steve
         $cart = $user->cart;
         
         $cart->items()->attach($item);
@@ -29,9 +34,9 @@ class CartController extends Controller
      
     }
 
-    public function destroy_in_my_cart(StoreCartRequest $request, Item $item)
+    public function destroy_in_my_cart(Request $request, Item $item)
     {
-        $user = User::find(11);
+        $user = $request->user();
         $cart = $user->cart;
         
         $cart->items()->detach($item);
@@ -73,9 +78,18 @@ class CartController extends Controller
      * @param  \App\Models\Cart  $cart
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show(Request $request,Cart $cart)
     {
-        return response()->json($cart->items()->sum('items.price')); // retourne le prix total du panier
+<<<<<<< HEAD
+        return response()->json($cart->items()->sum('items.price'));
+=======
+        $user =  $request->user();
+        
+        return response()->json([
+            'items' => $user->cart->items,
+            'total' =>  $user->cart->items()->sum('items.price'),
+    ]);
+>>>>>>> branch_steve
     }
 
     /**
