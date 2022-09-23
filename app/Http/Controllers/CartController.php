@@ -21,11 +21,7 @@ class CartController extends Controller
 
     public function add_in_my_cart(Request $request, Item $item)
     {
-<<<<<<< HEAD
-        $user = User::find(11); // request()->user();
-=======
         $user =  $request->user();
->>>>>>> branch_steve
         $cart = $user->cart;
         
         $cart->items()->attach($item);
@@ -80,16 +76,7 @@ class CartController extends Controller
      */
     public function show(Request $request,Cart $cart)
     {
-<<<<<<< HEAD
         return response()->json($cart->items()->sum('items.price'));
-=======
-        $user =  $request->user();
-        
-        return response()->json([
-            'items' => $user->cart->items,
-            'total' =>  $user->cart->items()->sum('items.price'),
-    ]);
->>>>>>> branch_steve
     }
 
     /**

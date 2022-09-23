@@ -34,12 +34,6 @@ Route::get('/user/cart/show',[App\Http\Controllers\CartController::class, 'show'
 
 Route::post('/user/add_in_my_cart/{item}',[App\Http\Controllers\CartController::class, 'add_in_my_cart'])->middleware('auth:sanctum');
 
-<<<<<<< HEAD
-Route::post('/user/cart/destroy_item/{item}',[App\Http\Controllers\CartController::class, 'destroy_in_my_cart'])->middleware('auth');
-
-
-=======
 Route::post('/user/cart/destroy_in_my_cart/{item}',[App\Http\Controllers\CartController::class, 'destroy_in_my_cart'])->middleware('auth:sanctum');
 
 // Route::post('/user/order/store',[App\Http\Controllers\OrderController::class, 'store'])->middleware('auth:sanctum');
->>>>>>> branch_steve
