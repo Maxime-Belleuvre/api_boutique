@@ -32,6 +32,6 @@ Route::get('/items/show/{item}',[App\Http\Controllers\API\ItemController::class,
 
 Route::get('/carts/show/{cart}',[App\Http\Controllers\CartController::class, 'show']);
 
-Route::post('/user/cart/{item}',[App\Http\Controllers\CartController::class, 'add_in_my_cart']);
+Route::post('/user/cart/{item}',[App\Http\Controllers\CartController::class, 'add_in_my_cart'])->middleware('auth:sanctum');
 
-Route::post('/user/cart/destroy_item/{item}',[App\Http\Controllers\CartController::class, 'destroy_in_my_cart'])->middleware('auth');
+Route::post('/user/cart/destroy_item/{item}',[App\Http\Controllers\CartController::class, 'destroy_in_my_cart'])->middleware('auth:sanctum');

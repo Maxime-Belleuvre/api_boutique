@@ -8,6 +8,7 @@ use App\Models\Item;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -18,9 +19,9 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function add_in_my_cart(StoreCartRequest $request, Item $item)
+    public function add_in_my_cart(Request $request, Item $item)
     {
-        $user = User::find(11);
+        $user =  $request->user();
         $cart = $user->cart;
         
         $cart->items()->attach($item);
@@ -29,9 +30,9 @@ class CartController extends Controller
      
     }
 
-    public function destroy_in_my_cart(StoreCartRequest $request, Item $item)
+    public function destroy_in_my_cart(Request $request, Item $item)
     {
-        $user = User::find(11);
+        $user = $request->user();
         $cart = $user->cart;
         
         $cart->items()->detach($item);
