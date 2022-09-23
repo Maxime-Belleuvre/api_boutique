@@ -12,7 +12,7 @@ class Item extends Model
 
     public function carts()
     {
-        return $this->belongsToMany(Cart::class, 'items_carts', 'item_id', 'cart_id');
+        return $this->belongsToMany(Cart::class, 'carts_items', 'item_id', 'cart_id');
     }
 
     public function orders()

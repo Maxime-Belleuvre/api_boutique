@@ -17,7 +17,10 @@ class ItemFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => fake()->name(),
+            'description' => fake()->unique()->paragraph(),
+            'price' => fake()->randomFloat(2,1,999),
+            'image_url' => 'qsdsfsfspqsfd.dede'
         ];
     }
 }

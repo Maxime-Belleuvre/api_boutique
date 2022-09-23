@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\User;
+use App\Models\Item;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCartRequest;
 use App\Http\Requests\UpdateCartRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -14,6 +17,30 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function add_in_my_cart(StoreCartRequest $request, Item $item)
+    {
+        $user = User::find(11);
+        $cart = $user->cart;
+        
+        $cart->items()->attach($item);
+
+        return response()->json("success");
+     
+    }
+
+    public function destroy_in_my_cart(StoreCartRequest $request, Item $item)
+    {
+        $user = User::find(11);
+        $cart = $user->cart;
+        
+        $cart->items()->detach($item);
+
+        return response()->json("success");
+     
+    }
+
+
     public function index()
     {
         //
@@ -48,7 +75,7 @@ class CartController extends Controller
      */
     public function show(Cart $cart)
     {
-        //
+        return response()->json($cart->items()->sum('items.price'));
     }
 
     /**
