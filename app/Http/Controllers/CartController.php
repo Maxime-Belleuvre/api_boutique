@@ -20,7 +20,7 @@ class CartController extends Controller
 
     public function add_in_my_cart(StoreCartRequest $request, Item $item)
     {
-        $user = User::find(11);
+        $user = User::find(11); // request()->user(); // permet de récupérer l'utilisateur connecté
         $cart = $user->cart;
         
         $cart->items()->attach($item);
@@ -75,7 +75,7 @@ class CartController extends Controller
      */
     public function show(Cart $cart)
     {
-        return response()->json($cart->items()->sum('items.price'));
+        return response()->json($cart->items()->sum('items.price')); // retourne le prix total du panier
     }
 
     /**

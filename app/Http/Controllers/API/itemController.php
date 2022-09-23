@@ -18,7 +18,7 @@ class itemController extends Controller
     public function index()
     {
         $items  = Item::all();
-        return response()->json($items);
+        return response()->json($items); 
     }
 
     /**
@@ -26,9 +26,11 @@ class itemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create()   {
+        
+        
+        // $item = Item::create($request->all());
+        
     }
 
     /**
@@ -39,7 +41,14 @@ class itemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $validated = $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'description' => 'required|unique:posts|max:255',
+            'price' => 'required',
+            'image_url' => 'required|unique|',
+        ]);
+        
     }
 
     /**

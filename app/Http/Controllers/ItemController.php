@@ -26,7 +26,10 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        
+        // $item = Item::create($request->all());
+
+        
     }
 
     /**
@@ -37,7 +40,7 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-        //
+        
     }
 
     /**

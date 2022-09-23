@@ -35,3 +35,5 @@ Route::get('/carts/show/{cart}',[App\Http\Controllers\CartController::class, 'sh
 Route::post('/user/cart/{item}',[App\Http\Controllers\CartController::class, 'add_in_my_cart']);
 
 Route::post('/user/cart/destroy_item/{item}',[App\Http\Controllers\CartController::class, 'destroy_in_my_cart'])->middleware('auth');
+
+
